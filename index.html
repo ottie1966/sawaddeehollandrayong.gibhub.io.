@@ -7,87 +7,85 @@
 <title>Sawaddee Holland Rayong</title>
 
 <style>
-<!-- HERO SLIDER -->
 
-<div class="slider">
-
-
-
-</div>.card img,
-.restaurant-grid img{
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
-}
 body{
 margin:0;
 font-family:Arial;
-background:#f4f4f4;
-}
-.hero{
-height:400px;
+background:#f5f5f5;
 }
 
-.hero.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:1s;
-}
-
-.hero.active{
-opacity:1;
-}
 header{
 background:#0f4c5c;
 color:white;
 padding:15px;
 text-align:center;
-font-size:24px;
+font-size:22px;
 }
 
+/* HERO */
+.hero{
+position:relative;
+height:350px;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-text{
+position:absolute;
+bottom:20px;
+left:20px;
+color:white;
+background:rgba(0,0,0,0.5);
+padding:10px 15px;
+border-radius:10px;
+}
+
+/* SECTION */
 .section{
-padding:40px 20px;
+padding:30px 15px;
 text-align:center;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
+gap:15px;
 }
 
+/* CARD */
 .card{
 background:white;
-border-radius:15px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
+/* IMAGE */
 .card img{
 width:100%;
-height:240px;
-object-fit:cover
+height:200px;
+object-fit:cover;
+}
+
+/* TEXT */
 .card p{
+margin:0;
 padding:10px;
 font-weight:bold;
-background:white;
-position:relative;
-z-index:2;
 }
+
 /* SLIDER */
 .slider{
 position:relative;
-height:240px;
+height:200px;
 }
-.slider{
-position:relative;
-height:240px;
-overflow:hidden;
-}
+
 .slide{
 position:absolute;
 width:100%;
@@ -101,27 +99,24 @@ transition:0.5s;
 opacity:1;
 }
 
-/* RESTAURANT FIX */
-.restaurant-grid img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:12px;
-}
-
+/* BUTTON */
 .btn{
 display:inline-block;
-padding:12px 20px;
+margin-top:10px;
+padding:10px 20px;
 background:#ff7f11;
 color:white;
-border-radius:10px;
 text-decoration:none;
-margin-top:10px;
+border-radius:8px;
 }
 
+/* MOBILE */
 @media(max-width:700px){
 .grid{
 grid-template-columns:1fr;
+}
+.hero{
+height:250px;
 }
 }
 
@@ -133,9 +128,13 @@ grid-template-columns:1fr;
 <header>Sawaddee Holland Rayong</header>
 
 <!-- HERO -->
-<div class="section">
-<h1>🌴 Your Tropical Escape in Rayong</h1>
+<div class="hero">
+<img src="garden.jpg">
+<div class="hero-text">
+🌴 Relax near the beach in Rayong  
+<br>
 <a class="btn" href="https://wa.me/66811520624">💬 WhatsApp</a>
+</div>
 </div>
 
 <!-- ROOMS -->
@@ -145,39 +144,47 @@ grid-template-columns:1fr;
 <div class="grid">
 
 <!-- ROOM 1 -->
-<div class="card slider">
+<div class="card">
+<div class="slider">
 <img class="slide room1 active" src="room1.jpg">
 <img class="slide room1" src="room1b.jpg">
 <img class="slide room1" src="bathroom.jpg">
-
-<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB / night</p>
+</div>
+<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB</p>
 </div>
 
 <!-- ROOM 2 -->
-<div class="card slider">
+<div class="card">
+<div class="slider">
 <img class="slide room2 active" src="room2.jpg">
 <img class="slide room2" src="room2b.jpg">
-
-<p>🌴 Family Room • Spacious • From 1800 THB / night</p>
+</div>
+<p>🌴 Family Room • Spacious • From 1800 THB</p>
 </div>
 
 </div>
 </div>
 
+<!-- RESTAURANT -->
+<div class="section">
+<h2>Restaurant & Bar</h2>
 
+<div class="grid">
+<div class="card">
+<img src="restaurant.jpg">
+</div>
+
+<div class="card">
+<img src="bar.jpg">
+</div>
+</div>
 
 </div>
 
 <!-- GARDEN -->
 <div class="section">
 <h2>🌴 Outside & Garden</h2>
-.card img,
-.restaurant-grid img{
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
-}
+
 <div class="card">
 <img src="garden.jpg">
 <p>Relax in our tropical garden near the beach</p>
@@ -187,7 +194,7 @@ display:block;
 
 <script>
 
-/* SLIDERS */
+/* SLIDER */
 function slider(name){
 let slides=document.querySelectorAll("."+name);
 let i=0;
@@ -199,7 +206,6 @@ slides[i].classList.add("active");
 },3000);
 }
 
-slider("hero");
 slider("room1");
 slider("room2");
 
