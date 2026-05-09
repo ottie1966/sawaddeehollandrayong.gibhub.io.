@@ -466,7 +466,25 @@ slides[index].classList.add("active");
 
 </script>
 <script>
+<script>
 
+let gardenSlides = document.querySelectorAll(".garden-slide");
+let gardenIndex = 0;
+
+setInterval(()=>{
+
+gardenSlides.forEach(slide=>slide.classList.remove("active"));
+
+gardenIndex++;
+if(gardenIndex >= gardenSlides.length){
+gardenIndex = 0;
+}
+
+gardenSlides[gardenIndex].classList.add("active");
+
+},3000);
+
+</script>
 function startSlider(className){
 let slides=document.querySelectorAll("." + className);
 let index=0;
