@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sawaddee Holland Rayong</title>
 
 <style>
-
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f5f5f5;
 }
 
+/* HEADER */
 header{
 background:#0f4c5c;
 color:white;
@@ -24,30 +23,18 @@ font-size:22px;
 
 /* HERO */
 .hero{
-position:relative;
-height:350px;
-overflow:hidden;
-}
-
-.hero img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.hero-text{
-position:absolute;
-bottom:20px;
-left:20px;
-color:white;
-background:rgba(0,0,0,0.5);
-padding:10px 15px;
-border-radius:10px;
+height:260px;
+background:#ccc;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#333;
 }
 
 /* SECTION */
 .section{
-padding:30px 15px;
+padding:25px 15px;
 text-align:center;
 }
 
@@ -71,6 +58,7 @@ box-shadow:0 3px 10px rgba(0,0,0,0.1);
 width:100%;
 height:200px;
 object-fit:cover;
+display:block;
 }
 
 /* TEXT */
@@ -78,6 +66,7 @@ object-fit:cover;
 margin:0;
 padding:10px;
 font-weight:bold;
+background:white;
 }
 
 /* SLIDER */
@@ -115,11 +104,7 @@ border-radius:8px;
 .grid{
 grid-template-columns:1fr;
 }
-.hero{
-height:250px;
 }
-}
-
 </style>
 </head>
 
@@ -127,12 +112,10 @@ height:250px;
 
 <header>Sawaddee Holland Rayong</header>
 
-<!-- HERO -->
+<!-- HERO (werkt ook zonder foto) -->
 <div class="hero">
-<img src="garden.jpg">
-<div class="hero-text">
-🌴 Relax near the beach in Rayong  
-<br>
+<div>
+<h2>🌴 Welcome to Rayong</h2>
 <a class="btn" href="https://wa.me/66811520624">💬 WhatsApp</a>
 </div>
 </div>
@@ -146,20 +129,20 @@ height:250px;
 <!-- ROOM 1 -->
 <div class="card">
 <div class="slider">
-<img class="slide room1 active" src="room1.jpg">
-<img class="slide room1" src="room1b.jpg">
-<img class="slide room1" src="bathroom.jpg">
+<img class="slide room1 active" src="room1.jpg" onerror="this.style.display='none'">
+<img class="slide room1" src="room1b.jpg" onerror="this.style.display='none'">
+<img class="slide room1" src="bathroom.jpg" onerror="this.style.display='none'">
 </div>
-<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB</p>
+<p>🌿 Comfort Room • Airco • WiFi • From 1200 THB / night</p>
 </div>
 
 <!-- ROOM 2 -->
 <div class="card">
 <div class="slider">
-<img class="slide room2 active" src="room2.jpg">
-<img class="slide room2" src="room2b.jpg">
+<img class="slide room2 active" src="room2.jpg" onerror="this.style.display='none'">
+<img class="slide room2" src="room2b.jpg" onerror="this.style.display='none'">
 </div>
-<p>🌴 Family Room • Spacious • From 1800 THB</p>
+<p>🌴 Family Room • Spacious • From 1800 THB / night</p>
 </div>
 
 </div>
@@ -171,11 +154,11 @@ height:250px;
 
 <div class="grid">
 <div class="card">
-<img src="restaurant.jpg">
+<img src="restaurant.jpg" onerror="this.style.display='none'">
 </div>
 
 <div class="card">
-<img src="bar.jpg">
+<img src="bar.jpg" onerror="this.style.display='none'">
 </div>
 </div>
 
@@ -186,17 +169,30 @@ height:250px;
 <h2>🌴 Outside & Garden</h2>
 
 <div class="card">
-<img src="garden.jpg">
+<img src="garden.jpg" onerror="this.style.display='none'">
 <p>Relax in our tropical garden near the beach</p>
 </div>
 
 </div>
 
-<script>
+<!-- GOOGLE MAPS -->
+<div class="section">
+<h2>📍 Location</h2>
 
-/* SLIDER */
+<iframe 
+src="https://www.google.com/maps?q=Rayong&output=embed"
+width="100%" 
+height="250" 
+style="border:0;">
+</iframe>
+
+</div>
+
+<script>
 function slider(name){
 let slides=document.querySelectorAll("."+name);
+if(slides.length === 0) return;
+
 let i=0;
 
 setInterval(()=>{
@@ -208,7 +204,6 @@ slides[i].classList.add("active");
 
 slider("room1");
 slider("room2");
-
 </script>
 
 </body>
