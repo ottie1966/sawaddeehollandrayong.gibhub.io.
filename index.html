@@ -26,7 +26,6 @@ header{
   text-align:center;
   margin:10px;
 }
-
 .lang-btns button{
   margin:5px;
   padding:8px 12px;
@@ -40,10 +39,9 @@ header{
 /* HERO */
 .hero{
   position:relative;
-  height:500px;
+  height:450px;
   overflow:hidden;
 }
-
 .hero img{
   position:absolute;
   width:100%;
@@ -52,32 +50,8 @@ header{
   opacity:0;
   transition:1s;
 }
-
 .hero img.active{
   opacity:1;
-}
-
-.overlay{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.45);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
-}
-
-.btn{
-  background:#ff7f11;
-  color:white;
-  padding:12px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:10px;
-  font-weight:bold;
 }
 
 /* SECTIONS */
@@ -89,20 +63,36 @@ header{
 .card{
   max-width:500px;
   margin:20px auto;
+  position:relative;
+  height:320px;
+  overflow:hidden;
 }
 
-/* IMAGES */
 .card img{
+  position:absolute;
   width:100%;
   height:320px;
   object-fit:cover;
-  display:none;
   border-radius:15px;
+  opacity:0;
+  transition:1s;
+}
+
+/* TEXT */
+.card p{
+  margin-top:330px;
 }
 
 /* LANGUAGE */
-.lang{
-  display:none;
+.lang{ display:none; }
+
+/* BUTTON */
+.btn{
+  background:#ff7f11;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
 }
 
 /* WHATSAPP */
@@ -112,75 +102,20 @@ header{
   right:20px;
   background:#25D366;
   color:white;
-  font-size:26px;
   padding:15px;
   border-radius:50%;
   text-decoration:none;
-}.card{
-  position:relative;
-  height:320px;
-  overflow:hidden;
-}
-
-.card img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:15px;
-  position:absolute;
-  top:0;
-  left:0;
-}
-
-@media(max-width:700px){
-  .hero{height:420px;}
-  .card img{height:200px;} 
 }
 </style>
-  
 </head>
-<script>
-function slider(cls){
-  let slides = document.querySelectorAll("." + cls);
-  let i = 0;
 
-  if(slides.length === 0) return;
-
-  <script>
-function slider(cls){
-  let slides = document.querySelectorAll("." + cls);
-  let i = 0;
-
-  if(slides.length === 0) return;
-
-  slides.forEach((s, index)=>{
-    s.style.position = "absolute";
-    s.style.opacity = "0";
-    s.style.transition = "opacity 1s";
-  });
-
-  slides[0].style.opacity = "1";
-
-  setInterval(()=>{
-    slides[i].style.opacity = "0";
-    i = (i + 1) % slides.length;
-    slides[i].style.opacity = "1";
-  },3000);
-}
-
-// start sliders
-slider("room1-slide");
-slider("room2-slide");
-slider("garden-slide");
-slider("bar-slide");
-</script>
+<body>
 
 <header>Sawaddee Holland Rayong</header>
 
-<!-- LANGUAGE -->
 <div class="lang-btns">
-  <button onclick="setLang('nl')">NL</button>
   <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('nl')">NL</button>
   <button onclick="setLang('th')">TH</button>
 </div>
 
@@ -189,133 +124,95 @@ slider("bar-slide");
   <img src="beach1.jpg" class="active">
   <img src="beach2.jpg">
   <img src="beach3.jpg">
-
-  <div class="overlay">
-    <div>
-      <h1 class="lang nl">🌴 Jouw Tropische Verblijf</h1>
-      <h1 class="lang en">🌴 Your Tropical Escape</h1>
-      <h1 class="lang th">🌴 ที่พักใกล้ชายหาดของคุณ</h1>
-
-      <p class="lang nl">200m van strand • Kamers • Bar • Pooltafel</p>
-      <p class="lang en">200m from the beach • Rooms • Bar • Pool table</p>
-      <p class="lang th">ห่างจากชายหาด 200 เมตร • ห้องพัก • บาร์ • โต๊ะพูล</p>
-
-      <a class="btn" href="https://wa.me/66811520624">WhatsApp</a>
-    </div>
-  </div>
 </div>
 
 <!-- ROOMS -->
 <div class="section">
-  <h2 class="lang nl">Kamers</h2>
-  <h2 class="lang en">Rooms</h2>
-  <h2 class="lang th">ห้องพัก</h2>
+<h2 class="lang en">Rooms</h2>
+<h2 class="lang nl">Kamers</h2>
+<h2 class="lang th">ห้องพัก</h2>
 
-  <div class="card">
-    <img class="room1-slide" src="room1.jpg">
-    <img class="room1-slide" src="room1b.jpg">
+<div class="card">
+  <img class="room1" src="room1.jpg">
+  <img class="room1" src="room1b.jpg">
 
-    <p>
-      <strong>Comfort Room – 1200 Baht / night</strong><br><br>
-      <span class="lang nl">Comfortabele kamer vlakbij het strand.</span>
-      <span class="lang en">Comfortable room near the beach.</span>
-      <span class="lang th">ห้องพักสะดวกสบาย ใกล้ชายหาด</span>
-    </p>
-  </div>
-
-  <div class="card">
-    <img class="room2-slide" src="room2.jpg">
-    <img class="room2-slide" src="room2b.jpg">
-
-    <p>
-      <strong>Family Room – 1800 Baht / night</strong><br><br>
-      <span class="lang nl">Ruime kamer voor gezinnen of groepen.</span>
-      <span class="lang en">Spacious room for families or groups.</span>
-      <span class="lang th">ห้องพักกว้างขวางสำหรับครอบครัวหรือกลุ่ม</span>
-    </p>
-  </div>
+  <p>
+  <strong>Comfort Room – 1200 Baht</strong><br>
+  <span class="lang en">Comfortable room near the beach</span>
+  <span class="lang nl">Comfortabele kamer vlakbij strand</span>
+  <span class="lang th">ห้องพักใกล้ชายหาด</span>
+  </p>
 </div>
+
+<div class="card">
+  <img class="room2" src="room2.jpg">
+  <img class="room2" src="room2b.jpg">
+
+  <p>
+  <strong>Family Room – 1800 Baht</strong><br>
+  <span class="lang en">Spacious room for families</span>
+  <span class="lang nl">Ruime kamer voor gezinnen</span>
+  <span class="lang th">ห้องพักสำหรับครอบครัว</span>
+  </p>
+</div>
+</div>
+
+<!-- RESTAURANT -->
 <div class="section">
-  <h2 class="lang nl">Restaurant & Bar</h2>
-  <h2 class="lang en">Restaurant & Bar</h2>
-  <h2 class="lang th">ร้านอาหาร & บาร์</h2>
+<h2 class="lang en">Bar & Pool</h2>
+<h2 class="lang nl">Bar & Pool</h2>
+<h2 class="lang th">บาร์ & โต๊ะพูล</h2>
 
-  <div class="card">
-    <img class="bar-slide" src="bar1.jpg">
-    <img class="bar-slide" src="bar2.jpg">
-    <img class="bar-slide" src="pool.jpg">
+<div class="card">
+  <img class="bar" src="bar1.jpg">
+  <img class="bar" src="bar2.jpg">
+  <img class="bar" src="pool.jpg">
 
-    <p>
-      <span class="lang nl">
-      Geniet van een drankje aan de bar of speel een potje pool in een ontspannen sfeer. 
-      Perfect om te relaxen na een dag op het strand.
-      </span>
-
-      <span class="lang en">
-      Enjoy a drink at the bar or play a game of pool in a relaxed atmosphere. 
-      The perfect place to unwind after a day at the beach.
-      </span>
-
-      <span class="lang th">
-      เพลิดเพลินกับเครื่องดื่มที่บาร์ หรือเล่นพูลในบรรยากาศสบายๆ 
-      เหมาะสำหรับการพักผ่อนหลังจากวันเที่ยวทะเล
-      </span>
-    </p>
-  </div>
+  <p>
+  <span class="lang en">Enjoy drinks and play pool in a relaxed atmosphere</span>
+  <span class="lang nl">Geniet van drankjes en speel pool</span>
+  <span class="lang th">ดื่มเครื่องดื่มและเล่นพูล</span>
+  </p>
 </div>
+</div>
+
 <!-- GARDEN -->
 <div class="section">
-  <h2>Garden</h2>
+<h2>Garden</h2>
 
-  <div class="card">
-    <img class="garden-slide" src="garden1.jpg">
-    <img class="garden-slide" src="garden2.jpg">
-    <img class="garden-slide" src="outside.jpg">
-  </div>
+<div class="card">
+  <img class="garden" src="garden1.jpg">
+  <img class="garden" src="garden2.jpg">
+  <img class="garden" src="outside.jpg">
+</div>
 </div>
 
-<!-- LOCATION -->
+<!-- MAP -->
 <div class="section">
-  <h2>Location</h2>
+<h2>Location</h2>
 
-  <iframe 
-    src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-    width="100%"
-    height="320"
-    style="border:0;">
-  </iframe>
+<iframe 
+src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
+width="100%" height="300">
+</iframe>
 
-  <br><br>
+<br><br>
 
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Sawaddee+Holland+Rayong" target="_blank" class="btn">
-    <span class="lang nl">Route openen</span>
-    <span class="lang en">Open Route</span>
-    <span class="lang th">นำทาง</span>
-  </a>
+<a class="btn" target="_blank"
+href="https://www.google.com/maps/dir/?api=1&destination=Sawaddee+Holland+Rayong">
+Route
+</a>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
-// IMAGE SLIDER
-
-// HERO SLIDER
-let heroSlides = document.querySelectorAll(".hero img");
-let h = 0;
-
-setInterval(()=>{<script>
-function slider(cls){
+// FADE SLIDER
+function startSlider(cls){
   let slides = document.querySelectorAll("." + cls);
   let i = 0;
 
   if(slides.length === 0) return;
-
-  slides.forEach((s, index)=>{
-    s.style.position = "absolute";
-    s.style.opacity = "0";
-    s.style.transition = "opacity 1s";
-  });
 
   slides[0].style.opacity = "1";
 
@@ -326,30 +223,29 @@ function slider(cls){
   },3000);
 }
 
-// start sliders
-slider("room1-slide");
-slider("room2-slide");
-slider("garden-slide");
-slider("bar-slide");
-</script>
-  heroSlides[h].classList.remove("active");
-  h = (h + 1) % heroSlides.length;
-  heroSlides[h].classList.add("active");
+// START ALL
+startSlider("room1");
+startSlider("room2");
+startSlider("bar");
+startSlider("garden");
+
+// HERO
+let hero = document.querySelectorAll(".hero img");
+let h=0;
+
+setInterval(()=>{
+  hero[h].classList.remove("active");
+  h=(h+1)%hero.length;
+  hero[h].classList.add("active");
 },4000);
 
-// LANGUAGE SWITCH
+// LANGUAGE
 function setLang(lang){
-  document.querySelectorAll('.lang').forEach(el=>{
-    el.style.display = 'none';
-  });
-
-  document.querySelectorAll('.' + lang).forEach(el=>{
-    el.style.display = 'block';
-  });
+  document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.'+lang).forEach(el=>el.style.display='block');
 }
 
-// DEFAULT LANGUAGE
-setLang('en');
+setLang("en");
 </script>
 
 </body>
