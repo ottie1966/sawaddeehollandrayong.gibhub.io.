@@ -120,11 +120,39 @@ header{
 
 @media(max-width:700px){
   .hero{height:420px;}
-  .card img{height:200px;}
+  .card img{height:200px;} 
 }
 </style>
+  
 </head>
+<script>
+function slider(cls){
+  let slides = document.querySelectorAll("." + cls);
+  let i = 0;
 
+  if(slides.length === 0) return;
+
+  slides.forEach((s, index)=>{
+    s.style.position = "absolute";
+    s.style.opacity = "0";
+    s.style.transition = "opacity 1s";
+  });
+
+  slides[0].style.opacity = "1";
+
+  setInterval(()=>{
+    slides[i].style.opacity = "0";
+    i = (i + 1) % slides.length;
+    slides[i].style.opacity = "1";
+  },3000);
+}
+
+// start sliders
+slider("room1-slide");
+slider("room2-slide");
+slider("garden-slide");
+slider("bar-slide");
+</script>
 <body>
 
 <header>Sawaddee Holland Rayong</header>
