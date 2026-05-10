@@ -249,3 +249,33 @@ startSlider("gardenSlider");
 
 </body>
 </html>
+<div class="card">
+  <img class="room1-slide" src="room1.jpg">
+  <img class="room1-slide" src="room1b.jpg"><script>
+function slider(cls){
+let s=document.querySelectorAll("."+cls);
+let i=0;
+
+if(s.length==0) return;
+
+s[i].style.display="block";
+
+setInterval(()=>{
+s[i].style.display="none";
+i=(i+1)%s.length;
+s[i].style.display="block";
+},3000);
+}
+
+slider("room1-slide");
+slider("room2-slide");
+</script>
+  
+  <p>Kamer 1</p>
+</div>
+
+<div class="card">
+  <img class="room2-slide" src="room2.jpg">
+  <img class="room2-slide" src="room2b.jpg">
+  <p>Kamer 2</p>
+</div>
