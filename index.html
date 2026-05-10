@@ -20,30 +20,66 @@ body{
 }
 
 .hero img{
+  position:absolute;
   width:100%;
   height:100%;
   object-fit:cover;
+  opacity:0;
+  transition:1s;
+}
+
+.hero img.active{
+  opacity:1;
+}
+
+/* OVERLAY */
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.overlay img{
+  width:120px;
+  margin-bottom:10px;
 }
 
 /* SECTIONS */
 .section{
   max-width:600px;
   margin:30px auto;
-  border-radius:15px;
+  position:relative;
+  height:300px;
   overflow:hidden;
+  border-radius:15px;
 }
 
 .section img{
+  position:absolute;
   width:100%;
-  display:block;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:1s;
+}
+
+.section img.active{
+  opacity:1;
 }
 
 /* TEXT */
 .text{
-  background:#111;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,0.5);
   color:white;
-  padding:15px;
   text-align:center;
+  padding:10px;
 }
 
 /* WHATSAPP */
@@ -65,41 +101,48 @@ body{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="beach1.jpg">
+  <img class="hero-slide active" src="beach1.jpg">
+  <img class="hero-slide" src="beach2.jpg">
+  <img class="hero-slide" src="beach3.jpg">
+
+  <div class="overlay">
+    <img src="logo.png">
+    <h2>Sawaddee Holland Rayong</h2>
+    <p>Relaxed stay near the beach • Rooms • Bar • Pool table</p>
+  </div>
 </div>
 
 <!-- ROOM 1 -->
 <div class="section">
-  <img src="room1.jpg">
+  <img class="room1 active" src="room1.jpg">
+  <img class="room1" src="room1b.jpg">
+
   <div class="text">
     <h3>Comfort Room</h3>
-    <p>1200 Baht</p>
+    <p>1200 Baht per night</p>
   </div>
 </div>
 
 <!-- ROOM 2 -->
 <div class="section">
-  <img src="room2.jpg">
+  <img class="room2 active" src="room2.jpg">
+  <img class="room2" src="room2b.jpg">
+
   <div class="text">
     <h3>Family Room</h3>
-    <p>1800 Baht</p>
+    <p>1800 Baht per night</p>
   </div>
 </div>
 
 <!-- BAR -->
 <div class="section">
-  <img src="bar1.jpg">
+  <img class="bar active" src="bar1.jpg">
+  <img class="bar" src="bar2.jpg">
+  <img class="bar" src="pool.jpg">
+
   <div class="text">
     <h3>Bar & Pool</h3>
-    <p>Relax • Drink • Play</p>
-  </div>
-</div>
-
-<!-- GARDEN -->
-<div class="section">
-  <img src="garden1.jpg">
-  <div class="text">
-    <h3>Garden</h3>
+    <p>Drinks • Relax • Play</p>
   </div>
 </div>
 
@@ -111,8 +154,27 @@ body{
   </iframe>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
+
+<script>
+// SIMPLE SLIDER (STABIEL)
+function slider(className){
+  let slides = document.querySelectorAll("." + className);
+  let i = 0;
+
+  setInterval(()=>{
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
+  },3000);
+}
+
+// START
+slider("hero-slide");
+slider("room1");
+slider("room2");
+slider("bar");
+</script>
 
 </body>
 </html>
