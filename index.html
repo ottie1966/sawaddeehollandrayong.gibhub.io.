@@ -6,108 +6,106 @@
 
 <title>Sawaddee Holland Rayong</title>
 
-
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:#f4f4f4;
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
 }
 
 header{
-background:#0f4c5c;
-color:white;
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
+  background:#0f4c5c;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
 }
 
-/* HERO SLIDER */
+/* HERO */
 
 .hero{
-position:relative;
-height:500px;
-overflow:hidden;
+  position:relative;
+  height:500px;
+  overflow:hidden;
 }
 
 .hero img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:1s;
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:1s;
 }
 
 .hero img.active{
-opacity:1;
+  opacity:1;
 }
 
 .overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
 }
 
 .btn{
-background:#ff7f11;
-color:white;
-padding:12px 20px;
-border-radius:10px;
-text-decoration:none;
-display:inline-block;
-margin:8px;
-font-weight:bold;
+  background:#ff7f11;
+  color:white;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:10px;
+  font-weight:bold;
 }
 
 /* SECTIONS */
 
 .section{
-padding:40px 20px;
-text-align:center;
+  padding:40px 20px;
+  text-align:center;
 }
 
+.card{
+  max-width:500px;
+  margin:20px auto;
+}
 
-.room1-slide,
-.room2-slide{
+/* SLIDERS */
+
+.card img{
   width:100%;
   height:320px;
   object-fit:cover;
   display:none;
   border-radius:15px;
 }
-}
-}
-
-.slider img.active{
-display:block;
-}
 
 /* WHATSAPP */
 
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:26px;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  font-size:26px;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
 }
 
 @media(max-width:700px){
-.hero{height:420px;}
-.card img{height:200px;}
+  .hero{height:420px;}
+  .card img{height:200px;}
 }
 
 </style>
@@ -118,34 +116,22 @@ text-decoration:none;
 <header>Sawaddee Holland Rayong</header>
 
 <!-- HERO -->
-
 <div class="hero">
-<img src="beach1.jpg" class="active">
-<img src="beach2.jpg">
-<img src="beach3.jpg">
+  <img src="beach1.jpg" class="active">
+  <img src="beach2.jpg">
+  <img src="beach3.jpg">
 
-<div class="overlay">
-<div>
-<h1>🌴 Your Tropical Escape</h1>
-<p>200m from the beach • Rooms • Bar • Pool table</p>
-
-<a class="btn" href="https://wa.me/66811520624">WhatsApp</a>
+  <div class="overlay">
+    <div>
+      <h1>🌴 Your Tropical Escape</h1>
+      <p>200m from the beach • Rooms • Bar • Pool table</p>
+      <a class="btn" href="https://wa.me/66811520624">WhatsApp</a>
+    </div>
+  </div>
 </div>
 
-
-
-</div>
-
-<!-- GARDEN -->
-
+<!-- ROOMS -->
 <div class="section">
-
-<h2>Garden & Outside</h2>
-
-<div class="card slider" id="gardenSlider">
-<img src="garden1.jpg" class="active">
-<img src="garden2.jpg">
-<img src="o<div class="section">
   <h2>Rooms</h2>
 
   <div class="card">
@@ -159,67 +145,48 @@ text-decoration:none;
     <img class="room2-slide" src="room2b.jpg">
     <p>Kamer 2</p>
   </div>
-
-</div>utside.jpg">
 </div>
 
-<p>Relax in our tropical garden 🌿</p>
+<!-- GARDEN -->
+<div class="section">
+  <h2>Garden & Outside</h2>
 
+  <div class="card">
+    <img class="garden-slide" src="garden1.jpg">
+    <img class="garden-slide" src="garden2.jpg">
+    <img class="garden-slide" src="outside.jpg">
+  </div>
+
+  <p>Relax in our tropical garden 🌿</p>
 </div>
 
 <!-- RESTAURANT -->
-
 <div class="section">
+  <h2>Restaurant & Bar</h2>
 
-<h2>Restaurant & Bar</h2>
-
-<div class="card">
-<img src="restaurant.jpg">
+  <div class="card">
+    <img src="restaurant.jpg" style="display:block;">
+  </div>
 </div>
 
-</div>
+<!-- LOCATION -->
 <div class="section">
+  <h2>Location</h2>
 
-<h2>Location</h2>
-
-<iframe 
-src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-width="100%" <script>
-function slider(cls){
-let slides = document.querySelectorAll("." + cls);
-let i = 0;
-
-if(slides.length === 0) return;
-
-// verberg alles eerst
-slides.forEach(s => s.style.display = "none");
-
-// laat eerste zien
-slides[0].style.display = "block";
-
-setInterval(()=>{
-slides[i].style.display = "none";
-i = (i + 1) % slides.length;
-slides[i].style.display = "block";
-},3000);
-}
-
-slider("room1-slide");
-slider("room2-slide");
-</script>
-height="320">
-</iframe>
-
+  <iframe 
+    src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
+    width="100%"
+    height="320"
+    style="border:0;">
+  </iframe>
 </div>
-<!-- WHATSAPP FLOAT -->
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
-<!-- SCRIPTS -->
-...
-<!-- AL JE HTML HIERBOVEN -->
-
+<!-- SCRIPT -->
 <script>
+
 function slider(cls){
   let slides = document.querySelectorAll("." + cls);
   let i = 0;
@@ -236,10 +203,22 @@ function slider(cls){
   },3000);
 }
 
+// sliders starten
 slider("room1-slide");
 slider("room2-slide");
+slider("garden-slide");
+
+// hero slider (fade)
+let heroSlides = document.querySelectorAll(".hero img");
+let h = 0;
+
+setInterval(()=>{
+  heroSlides[h].classList.remove("active");
+  h = (h + 1) % heroSlides.length;
+  heroSlides[h].classList.add("active");
+},4000);
+
 </script>
 
 </body>
 </html>
-
