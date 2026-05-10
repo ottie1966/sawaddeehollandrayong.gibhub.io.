@@ -28,24 +28,26 @@ body{
   transition:1s;
 }
 
+.hero img.active{
+  opacity:1;
+}
 
 /* OVERLAY */
-
 .overlay{
   position:absolute;
   bottom:0;
   width:100%;
-  text-align:center;
   background:rgba(0,0,0,0.5);
+  color:white;
+  text-align:center;
   padding:20px;
 }
-</style>
 
 .logo{
   width:120px;
-  display:block;
-  margin:0 auto 10px;
+  margin-bottom:10px;
 }
+
 /* SECTIONS */
 .section{
   max-width:600px;
@@ -68,21 +70,7 @@ body{
 .section img.active{
   opacity:1;
 }
-.hero img.active{
-  opacity:1;
-}
-</head>
-<div class="hero">
-  <img class="hero-slide active" src="beach1.jpg">
-  <img class="hero-slide" src="beach2.jpg">
-  <img class="hero-slide" src="beach3.jpg">
 
-
-</div><div class="overlay">
-  <img src="logo.png" class="logo">
-  <h2>Sawaddee Holland Rayong</h2>
-  <p>Relaxed stay near the beach • Rooms • Bar • Pool table</p>
-</div>
 /* TEXT */
 .text{
   position:absolute;
@@ -106,11 +94,23 @@ body{
   text-decoration:none;
   font-size:20px;
 }
+</style>
+</head>
 
 <body>
 
 <!-- HERO -->
+<div class="hero">
+  <img class="hero-slide active" src="beach1.jpg">
+  <img class="hero-slide" src="beach2.jpg">
+  <img class="hero-slide" src="beach3.jpg">
 
+  <div class="overlay">
+    <img src="logo.png" class="logo">
+    <h2>Sawaddee Holland Rayong</h2>
+    <p>Relaxed stay near the beach • Rooms • Bar • Pool table</p>
+  </div>
+</div>
 
 <!-- ROOM 1 -->
 <div class="section">
@@ -142,7 +142,7 @@ body{
 
   <div class="text">
     <h3>Bar & Pool</h3>
-    <p>Drinks • Relax • Play **Restaurant</p>
+    <p>Drinks • Relax • Play</p>
   </div>
 </div>
 
