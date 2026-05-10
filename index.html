@@ -8,41 +8,31 @@
 <style>
 body{
   margin:0;
+  background:#000;
   font-family:Arial;
-  background:#f4f4f4;
-}
-
-header{
-  background:#0f4c5c;
-  color:white;
-  padding:15px;
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-}
-
-/* LANGUAGE */
-.lang-btns{
-  text-align:center;
-  margin:10px;
-}
-.lang-btns button{
-  margin:5px;
-  padding:8px 12px;
-  border:none;
-  border-radius:8px;
-  background:#0f4c5c;
-  color:white;
-  cursor:pointer;
 }
 
 /* HERO */
 .hero{
-  position:relative;
+  width:100%;
   height:450px;
+  position:relative;
   overflow:hidden;
 }
-.hero img{
+
+.section{
+  width:100%;
+  max-width:600px;
+  margin:30px auto;
+  position:relative;
+  height:350px;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+/* IMAGES */
+.hero img,
+.section img{
   position:absolute;
   width:100%;
   height:100%;
@@ -50,165 +40,93 @@ header{
   opacity:0;
   transition:1s;
 }
-.hero img.active{
-  opacity:1;
-}
 
-/* SECTIONS */
-.section{
-  padding:40px 20px;
+/* TEXT OVERLAY */
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  padding:15px;
   text-align:center;
 }
 
-.card{
-  max-width:500px;
-  margin:20px auto;
-  position:relative;
-  height:320px;
-  overflow:hidden;
+.overlay h2{
+  margin:0;
+  font-size:20px;
 }
 
-.card img{
-  position:absolute;
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:15px;
-  opacity:0;
-  transition:1s;
-}
-
-/* TEXT */
-.card p{
-  margin-top:330px;
-}
-
-/* LANGUAGE */
-.lang{ display:none; }
-
-/* BUTTON */
-.btn{
-  background:#ff7f11;
-  color:white;
-  padding:10px 15px;
-  border-radius:8px;
-  text-decoration:none;
-}
-
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
+.overlay p{
+  margin:5px 0 0;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<header>Sawaddee Holland Rayong</header>
-
-<div class="lang-btns">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('nl')">NL</button>
-  <button onclick="setLang('th')">TH</button>
-</div>
-
 <!-- HERO -->
 <div class="hero">
-  <img src="beach1.jpg" class="active">
-  <img src="beach2.jpg">
-  <img src="beach3.jpg">
+  <img class="hero-slide" src="beach1.jpg">
+  <img class="hero-slide" src="beach2.jpg">
+  <img class="hero-slide" src="beach3.jpg">
+
+  <div class="overlay">
+    <h2>Sawaddee Holland Rayong</h2>
+    <p>200m from beach • Rooms • Bar • Pool</p>
+  </div>
 </div>
 
-<!-- ROOMS -->
+<!-- ROOM 1 -->
 <div class="section">
-<h2 class="lang en">Rooms</h2>
-<h2 class="lang nl">Kamers</h2>
-<h2 class="lang th">ห้องพัก</h2>
-
-<div class="card">
   <img class="room1" src="room1.jpg">
   <img class="room1" src="room1b.jpg">
 
-  <p>
-  <strong>Comfort Room – 1200 Baht</strong><br>
-  <span class="lang en">Comfortable room near the beach</span>
-  <span class="lang nl">Comfortabele kamer vlakbij strand</span>
-  <span class="lang th">ห้องพักใกล้ชายหาด</span>
-  </p>
+  <div class="overlay">
+    <h2>Comfort Room</h2>
+    <p>1200 Baht per night</p>
+  </div>
 </div>
 
-<div class="card">
+<!-- ROOM 2 -->
+<div class="section">
   <img class="room2" src="room2.jpg">
   <img class="room2" src="room2b.jpg">
 
-  <p>
-  <strong>Family Room – 1800 Baht</strong><br>
-  <span class="lang en">Spacious room for families</span>
-  <span class="lang nl">Ruime kamer voor gezinnen</span>
-  <span class="lang th">ห้องพักสำหรับครอบครัว</span>
-  </p>
-</div>
+  <div class="overlay">
+    <h2>Family Room</h2>
+    <p>1800 Baht per night</p>
+  </div>
 </div>
 
-<!-- RESTAURANT -->
+<!-- BAR -->
 <div class="section">
-<h2 class="lang en">Bar & Pool</h2>
-<h2 class="lang nl">Bar & Pool</h2>
-<h2 class="lang th">บาร์ & โต๊ะพูล</h2>
-
-<div class="card">
   <img class="bar" src="bar1.jpg">
   <img class="bar" src="bar2.jpg">
   <img class="bar" src="pool.jpg">
 
-  <p>
-  <span class="lang en">Enjoy drinks and play pool in a relaxed atmosphere</span>
-  <span class="lang nl">Geniet van drankjes en speel pool</span>
-  <span class="lang th">ดื่มเครื่องดื่มและเล่นพูล</span>
-  </p>
-</div>
+  <div class="overlay">
+    <h2>Bar & Pool</h2>
+    <p>Drinks • Relax • Play pool</p>
+  </div>
 </div>
 
 <!-- GARDEN -->
 <div class="section">
-<h2>Garden</h2>
-
-<div class="card">
   <img class="garden" src="garden1.jpg">
   <img class="garden" src="garden2.jpg">
   <img class="garden" src="outside.jpg">
+
+  <div class="overlay">
+    <h2>Garden</h2>
+    <p>Relax in tropical atmosphere</p>
+  </div>
 </div>
-</div>
-
-<!-- MAP -->
-<div class="section">
-<h2>Location</h2>
-
-<iframe 
-src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-width="100%" height="300">
-</iframe>
-
-<br><br>
-
-<a class="btn" target="_blank"
-href="https://www.google.com/maps/dir/?api=1&destination=Sawaddee+Holland+Rayong">
-Route
-</a>
-</div>
-
-<a class="whatsapp" href="https://wa.me/66811520624">💬</a>
 
 <script>
-// FADE SLIDER
-function startSlider(cls){
+// SLIDER
+function slider(cls){
   let slides = document.querySelectorAll("." + cls);
   let i = 0;
 
@@ -223,29 +141,12 @@ function startSlider(cls){
   },3000);
 }
 
-// START ALL
-startSlider("room1");
-startSlider("room2");
-startSlider("bar");
-startSlider("garden");
-
-// HERO
-let hero = document.querySelectorAll(".hero img");
-let h=0;
-
-setInterval(()=>{
-  hero[h].classList.remove("active");
-  h=(h+1)%hero.length;
-  hero[h].classList.add("active");
-},4000);
-
-// LANGUAGE
-function setLang(lang){
-  document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
-  document.querySelectorAll('.'+lang).forEach(el=>el.style.display='block');
-}
-
-setLang("en");
+// START
+slider("hero-slide");
+slider("room1");
+slider("room2");
+slider("bar");
+slider("garden");
 </script>
 
 </body>
