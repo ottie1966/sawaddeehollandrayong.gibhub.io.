@@ -206,7 +206,29 @@ slider("room2-slide");
 
 <iframe 
 src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-width="100%" 
+width="100%" <script>
+function slider(cls){
+let slides = document.querySelectorAll("." + cls);
+let i = 0;
+
+if(slides.length === 0) return;
+
+// verberg alles eerst
+slides.forEach(s => s.style.display = "none");
+
+// laat eerste zien
+slides[0].style.display = "block";
+
+setInterval(()=>{
+slides[i].style.display = "none";
+i = (i + 1) % slides.length;
+slides[i].style.display = "block";
+},3000);
+}
+
+slider("room1-slide");
+slider("room2-slide");
+</script>
 height="320">
 </iframe>
 
@@ -217,46 +239,4 @@ height="320">
 
 <!-- SCRIPTS -->
 
-<script>
-
-/* HERO FADE */
-let heroSlides = document.querySelectorAll(".hero img");
-let h = 0;
-
-setInterval(()=>{
-heroSlides.forEach(s=>s.classList.remove("active"));
-h++;
-if(h>=heroSlides.length){h=0;}
-heroSlides[h].classList.add("active");
-},3000);
-
-/* GENERIC SLIDER */
-function startSlider(id){
-let slides = document.querySelectorAll("#"+id+" img");
-
-if(slides.length === 0) return; // voorkomt fouten
-
-let index = 0;
-
-setInterval(()=>{
-slides[index].classList.remove("active");
-
-index++;
-if(index >= slides.length){ index = 0; }
-
-slides[index].classList.add("active");
-
-},3000);
-}
-
-// START
-startSlider("comfortSlider");
-startSlider("familySlider");
-startSlider("gardenSlider");
-
-startSlider("comfortSlider");
-startSlider("familySlider");
-startSlider("gardenSlider");
-
-</script>
 
