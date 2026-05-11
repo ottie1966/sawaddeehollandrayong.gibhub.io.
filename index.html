@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +8,19 @@
 
 <style>
 body{
-<div class="top-logo">
-  <img src="logo.png">
-</div>
   margin:0;
   font-family:Arial;
-  background:#000;  
-}.top-logo{
+  background:#000;
+  color:white;
+}
+
+/* LOGO TOP */
+.top-logo{
   width:100%;
   background:#000;
   text-align:center;
-  padding:10px 0;
+  padding:15px 0;
 }
-
 .top-logo img{
   width:150px;
 }
@@ -30,7 +31,6 @@ body{
   height:450px;
   overflow:hidden;
 }
-
 .hero img{
   position:absolute;
   width:100%;
@@ -39,7 +39,6 @@ body{
   opacity:0;
   transition:1s;
 }
-
 .hero img.active{
   opacity:1;
 }
@@ -50,26 +49,35 @@ body{
   bottom:0;
   width:100%;
   background:rgba(0,0,0,0.5);
-  color:white;
   text-align:center;
   padding:20px;
 }
 
-.logo{
-  width:120px;
+/* INTRO TEXT */
+.rooms-intro{
+  max-width:750px;
+  margin:40px auto 10px;
+  text-align:center;
+  padding:0 15px;
+}
+.rooms-intro h2{
   margin-bottom:10px;
+}
+.rooms-intro p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:15px;
 }
 
 /* SECTIONS */
 .section{
-  max-width:600px;
+  max-width:650px;
   margin:30px auto;
   position:relative;
-  height:300px;
+  height:320px;
   overflow:hidden;
   border-radius:15px;
 }
-
 .section img{
   position:absolute;
   width:100%;
@@ -78,18 +86,16 @@ body{
   opacity:0;
   transition:1s;
 }
-
 .section img.active{
   opacity:1;
 }
 
-/* TEXT */
+/* TEXT OVERLAY */
 .text{
   position:absolute;
   bottom:0;
   width:100%;
   background:rgba(0,0,0,0.5);
-  color:white;
   text-align:center;
   padding:10px;
 }
@@ -111,6 +117,11 @@ body{
 
 <body>
 
+<!-- LOGO -->
+<div class="top-logo">
+  <img src="logo.png">
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <img class="hero-slide active" src="beach1.jpg">
@@ -118,10 +129,32 @@ body{
   <img class="hero-slide" src="beach3.jpg">
 
   <div class="overlay">
-    
     <h2>Sawaddee Holland Rayong</h2>
-    <p>Relaxed stay just 200 neters from the beach • Rooms • Bar • Restaurant  * Pool table</p>
+    <p>Relax • Beach • Comfort • Hospitality</p>
   </div>
+</div>
+
+<!-- ROOMS INTRO -->
+<div class="rooms-intro">
+  <h2>Our Rooms / Onze Kamers / ห้องพักของเรา</h2>
+
+  <p>
+  🇬🇧 We offer 3 comfortable Comfort Rooms and 2 spacious Family Rooms.  
+  The Family Room is a full apartment and can also be rented entirely for longer stays or groups.  
+  All rooms include air conditioning, TV, refrigerator and a private outdoor terrace.
+  </p>
+
+  <p>
+  🇳🇱 Wij hebben 3 Comfort Rooms en 2 ruime Family Rooms.  
+  De Family Room is een volledig appartement en kan ook in zijn geheel gehuurd worden.  
+  Alle kamers beschikken over airconditioning, tv, koelkast en een privé terras buiten.
+  </p>
+
+  <p>
+  🇹🇭 เรามีห้องพักแบบ Comfort 3 ห้อง และ Family Room 2 ห้อง  
+  Family Room เป็นอพาร์ทเมนท์ สามารถเช่าแบบทั้งห้องได้  
+  ทุกห้องมีแอร์ ทีวี ตู้เย็น และระเบียงส่วนตัวด้านนอก
+  </p>
 </div>
 
 <!-- ROOM 1 -->
@@ -153,12 +186,12 @@ body{
   <img class="bar" src="bar3.jpg">
 
   <div class="text">
-    <h3>Bar & Pool</h3>
-    <p>Drinks • Relax •  Food * Play</p>
+    <h3>Bar & Restaurant</h3>
+    <p>Relax • Drinks • Food • Pool Table</p>
   </div>
 </div>
 
-<!-- GARDEN (FIXED) -->
+<!-- GARDEN -->
 <div class="section">
   <img class="garden active" src="garden1.jpg">
   <img class="garden" src="garden2.jpg">
@@ -166,7 +199,7 @@ body{
 
   <div class="text">
     <h3>Garden</h3>
-    <p>Tropical relax area</p>
+    <p>Tropical Relax Area</p>
   </div>
 </div>
 
@@ -174,7 +207,7 @@ body{
 <div class="section">
   <iframe 
     src="https://www.google.com/maps?q=Sawaddee+Holland+Rayong&output=embed"
-    width="100%" height="300" style="border:0;">
+    width="100%" height="320" style="border:0;">
   </iframe>
 </div>
 
@@ -192,7 +225,6 @@ function slider(className){
   },3000);
 }
 
-// START
 slider("hero-slide");
 slider("room1");
 slider("room2");
@@ -202,3 +234,29 @@ slider("garden");
 
 </body>
 </html>
+```
+
+---
+
+## ✅ Wat is nu goed:
+
+* ✔ Logo **helemaal bovenaan**
+* ✔ Luxe uitstraling
+* ✔ 3 talen (NL / ENG / TH)
+* ✔ Rooms tekst professioneel
+* ✔ Sliders werken
+* ✔ WhatsApp knop
+* ✔ Google Maps
+
+---
+
+## 👉 Volgende stap (aanrader)
+
+Als je wilt maak ik:
+
+* ⭐ **Boek knop in tekst**
+* ⭐ **Prijs blok mooier**
+* ⭐ **Reviews / gasten ervaringen**
+* ⭐ **Google rating erbij**
+
+Zeg maar wat je nog wilt verbeteren 👍
